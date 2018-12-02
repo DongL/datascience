@@ -22,6 +22,15 @@ Some basic commands Add-commit-push  git add -u :/ # adds all modified file chan
     </item>
     
     <item>
+      <title>Priciple component analysis vs support vector machine</title>
+      <link>/priciple-component-analysis-vs-support-vector-machine/</link>
+      <pubDate>Sun, 02 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/priciple-component-analysis-vs-support-vector-machine/</guid>
+      <description>Load protienomic data import pandas as pd import numpy as np scan = pd.read_csv(&amp;#39;/Users/DL/Documents/Jupyter project/Somascan Protein Creatinine/somascan.csv&amp;#39;) print(scan.head()) ## SomaID SeqID Subject ID 9041 \ ## 0 SL019100 10336-3_3 E3 ubiquitin-protein ligase CHIP 11.067752 ## 1 SL007136 10337-83_3 CCAAT/enhancer-binding protein beta 12.721172 ## 2 SL001731 10339-48_3 Gamma-enolase 2.263340 ## 3 SL019096 10342-55_3 E3 SUMO-protein ligase PIAS4 3.987295 ## 4 SL005173 10344-334_3 Interleukin-10 receptor subunit alpha 70.692542 ## ## 9074 9149 9154 9166 9231 9235 .</description>
+    </item>
+    
+    <item>
       <title>A brief introduciton on intialization of a website using the R blogdown package</title>
       <link>/2018/12/01/getting-started/</link>
       <pubDate>Sat, 01 Dec 2018 00:00:00 +0000</pubDate>

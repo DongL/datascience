@@ -71,3 +71,14 @@ git push origin master # or just git push origin master
 ```
 
 ## Set up Netlify account
+
+### Load protienomic data
+
+```{r, engine='python'}
+import pandas as pd
+import numpy as np
+
+scan = pd.read_csv('/Users/DL/Documents/Jupyter project/Somascan Protein Creatinine/somascan.csv')
+print(scan.head())
+```
+
