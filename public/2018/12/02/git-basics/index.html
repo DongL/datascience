@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.37" />
+
+
+<title>Git basics - A Hugo website</title>
+<meta property="og:title" content="Git basics - A Hugo website">
+
+
+
+  
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="https://github.com/rstudio/blogdown">GitHub</a></li>
+    
+    <li><a href="https://twitter.com/rstudio">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">1 min read</span>
+    
+
+    <h1 class="article-title">Git basics</h1>
+
+    
+    <span class="article-date">2018/12/02</span>
+    
+
+    <div class="article-content">
+      
+
+<h2 id="online-tutorial-for-git">Online tutorial for Git</h2>
+
+<p><a href="https://www.youtube.com/watch?v=DQUcmNO4diQ&amp;list=PLeAngWE7pYE5lXCjbmg0C1hM-w0kPIFZA" title="How to use Git"><img src="http://img.youtube.com/vi/DQUcmNO4diQ/0.jpg" alt="How to use Git" /></a></p>
+
+<h2 id="some-basic-command">Some basic command</h2>
+
+<ul>
+<li>git status # check files, check history</li>
+<li>git add -u :/ # adds all modified file changes to the stage; analgus to confirm the changes</li>
+<li>git add * :/ # adds modified and any new files (that&rsquo;s not gitignore&rsquo;ed) to the stage</li>
+<li>git commit -m &lsquo;your commit comment&rsquo;   # equivalent to save the file</li>
+<li>git commit -am &lsquo;your commit comment&rsquo;   # perform add and commit</li>
+<li>git push origin master # or just git push origin master</li>
+<li>git log # show the history, who, when and what</li>
+<li>git reflog # random hash for each commit</li>
+<li>git show # show last command</li>
+<li>gitk # gui for history, id etc of commits sumbitted</li>
+<li>git checkout [filename] # convert back to original file.</li>
+<li>git reset &ndash;hard [commit id]  # set HEAD to the old commit idenified by id<br /></li>
+</ul>
+
+<h4 id="tips"><em>Tips</em></h4>
+
+<p>hit q to exit <br />
+add -h flag to get help: e.g. git show -h</p>
+
+<h2 id="how-commit-works">How commit works</h2>
+
+<p>The HEAD is the first change we commited followed by others with commit comments. Each commit has it own id and arranged in order.</p>
+
+<p><img src="/post/2018-12-02-git-basics_files/Screen Shot 2018-12-01 at 9.23.33 PM.png" alt="" /></p>
+
+<p>I am adding non sense here.</p>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+    
+
+    
+  </body>
+</html>
+
