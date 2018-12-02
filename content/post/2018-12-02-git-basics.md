@@ -56,10 +56,7 @@ add -h flag to get help: e.g. git show -h
 ## Merge 
 When the file is modified from other sources. A merge conflict will occur when run `git push`. We will need fisrt `git pull` to get conflicts and push back the merged fixes to remote repository.  
 
-
-
-
-![](/post/2018-12-02-git-basics_files/Screen Shot 2018-12-02 at 12.17.35 AM.png)
+![](/post/2018-12-02-git-basics_files/Screen Shot 2018-12-02 at 12.17.35 AM.png) 
 
 ## How commit works
 The HEAD is the first change we commited followed by others with commit comments. Each commit has it own id and arranged in order. 
@@ -68,6 +65,9 @@ The HEAD is the first change we commited followed by others with commit comments
 
 ## How HEAD works
 HEAD is pointing to the changes just committed by default. We can use `git reset --hard [commit id]`, to force HEAD jump back to old commits. In this case, `git push` command will get rejected because the tip of the current branch is not in agreement. Use `git push --force` to overide the one on the remote server. 
+
+
+
 
 ```
 git reflog
