@@ -38,6 +38,10 @@ tags: []
 - git rm --cached [filename] # remove file from the cache, oppsite to git add, prevent files being exposed to git. 
 
 ### Merge
+- git mergetool # 
+
+### Pull
+- git pull origin master # get a copy to local repository from remote repository for merging if applied.
 
 
 ### _Tips_   
@@ -49,7 +53,10 @@ add -h flag to get help: e.g. git show -h
 `git add` : modified \\
 `git commit` : saved
 
+## Merge 
+Merge conflicts, and push back to remote repository.  
 
+![](/post/2018-12-02-git-basics_files/Screen Shot 2018-12-02 at 12.17.35 AM.png)
 
 ## How commit works
 The HEAD is the first change we commited followed by others with commit comments. Each commit has it own id and arranged in order. 
