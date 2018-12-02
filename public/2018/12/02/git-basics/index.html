@@ -148,7 +148,7 @@ add -h flag to get help: e.g. git show -h</p>
 
 <h2 id="how-head-works">How HEAD works</h2>
 
-<p>HEAD is pointing to the changes just committed by default. We can use <code>git reset --hard [commit id]</code>, to force HEAD jump back to old commits. In this case, <code>git push</code> command will get rejected because the tip of the current branch is not in agreement. Use <code>git push --force</code> to overide the one on the remote server.</p>
+<p>HEAD is pointing to the changes recently committed by default. We can use <code>git reset --hard [commit id]</code>, to force HEAD to jump back to old commits. In this case, <code>git push</code> command will get rejected because the tip of the current branch is not in agreement. Use <code>git push --force</code> to overide the one on the remote server.</p>
 
 <pre><code>git reflog
 </code></pre>

@@ -64,7 +64,7 @@ The HEAD is the first change we commited followed by others with commit comments
 ![](/post/2018-12-02-git-basics_files/Screen Shot 2018-12-01 at 9.23.33 PM.png)
 
 ## How HEAD works
-HEAD is pointing to the changes just committed by default. We can use `git reset --hard [commit id]`, to force HEAD jump back to old commits. In this case, `git push` command will get rejected because the tip of the current branch is not in agreement. Use `git push --force` to overide the one on the remote server. 
+HEAD is pointing to the changes recently committed by default. We can use `git reset --hard [commit id]`, to force HEAD to jump back to old commits. In this case, `git push` command will get rejected because the tip of the current branch is not in agreement. Use `git push --force` to overide the one on the remote server. 
 
 
 
