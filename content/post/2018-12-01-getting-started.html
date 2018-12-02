@@ -1,0 +1,59 @@
+---
+title: "A brief introduciton on intialization of a website using the R blogdown package"
+author: "Dong Liang"
+date: '2018-12-01'
+slug: getting-started
+tags: R Markdown
+categories: []
+---
+
+
+
+<p>An useful short video introdution/guide is provided <a href="https://www.rstudio.com/resources/webinars/introducing-blogdown/">here</a>.The website will be hosted by github webiste and administered using Netfily.com server. Some basic background knowledges may involve:</p>
+<ul>
+<li><a href="https://www.markdownguide.org/basic-syntax/">Markdown syntax</a></li>
+<li>Github account</li>
+<li><a href="https://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf">Git</a></li>
+<li><a href="https://bookdown.org/yihui/blogdown/">Blogdown</a></li>
+</ul>
+<div id="set-up-a-new-repository-on-github" class="section level2">
+<h2>Set up a new repository on github</h2>
+<p>The <code>Github.com</code> is where you will upload and store all the static documents for your website. Suppose you have already set up a github account. The creation of a new repository is straightforward, nothing other than inputting some basic repository info. (e.g. your repository name, public, <em>etc</em>).</p>
+<div class="figure">
+<img src="/post/2018-12-01-getting-started_files/Screen%20Shot%202018-12-01%20at%205.10.31%20PM.png" alt="An illustration of github repository creation" />
+<p class="caption">An illustration of github repository creation</p>
+</div>
+</div>
+<div id="make-a-local-clone" class="section level2">
+<h2>Make a local clone</h2>
+<p>We now make a copy of the github repository to our local directory. Just copy the repository clone HTTPS address as follows: <img src="/post/2018-12-01-getting-started_files/Screen%20Shot%202018-12-01%20at%205.25.36%20PM.png" /></p>
+<p>Open your terminal and type:</p>
+<pre><code>git clone [repository clone HTTPS address]
+cd \your\local\dir</code></pre>
+<p>After downloding the git clone, you should see an empty folder with a folder name the same as the repository name.</p>
+</div>
+<div id="set-up-rstudio" class="section level2">
+<h2>Set up Rstudio</h2>
+<p>Rstudio have a whoel set of mature solution for building a website using a preset wizard addin - Website using blogdown. This will promote you to choose the theme and document format you’d like to use for blogging. <em>You should create a blogdown project exactly in the clone directory you just set.</em></p>
+<div class="figure">
+<img src="/post/2018-12-01-getting-started_files/Screen%20Shot%202018-12-01%20at%206.40.19%20PM.png" />
+
+</div>
+<p>Alternatively, the same results can be attained using the r command <code>new_site()</code> via Hugo, which prepares and generates an Hugo website skeleton into the directory locating your git clone copy you just set.</p>
+<div class="figure">
+<img src="/post/2018-12-01-getting-started_files/Screen%20Shot%202018-12-01%20at%205.41.29%20PM.png" />
+
+</div>
+</div>
+<div id="write-your-first-post" class="section level2">
+<h2>Write your first post</h2>
+<p>A new post can be initialized using <code>new_post()</code> r command from <code>blogdown</code> package.</p>
+<pre><code>blogdown::new_post(title, kind = &quot;default&quot;, open = interactive(), 
+    author = getOption(&quot;blogdown.author&quot;), categories = NULL, 
+    tags = NULL, date = Sys.Date(), file = NULL, slug = NULL, 
+    title_case = getOption(&quot;blogdown.title_case&quot;), subdir = getOption(&quot;blogdown.subdir&quot;, 
+        &quot;post&quot;), ext = getOption(&quot;blogdown.ext&quot;, &quot;.md&quot;))</code></pre>
+</div>
+<div id="push-to-github" class="section level2">
+<h2>Push to Github</h2>
+</div>
