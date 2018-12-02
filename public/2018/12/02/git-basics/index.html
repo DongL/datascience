@@ -80,7 +80,7 @@
 <h3 id="add-commit-push">Add-commit-push</h3>
 
 <ul>
-<li>git add -u :/ # adds all modified file changes to the stage; analgus to confirm the changes</li>
+<li>git add -u :/ # adds all modified file changes to the stage; analgus to get files monitored by git.</li>
 <li>git add * :/ # adds modified and any new files (that&rsquo;s not gitignore&rsquo;ed) to the stage</li>
 <li>git commit -m &lsquo;your commit comment&rsquo;   # equivalent to save the file</li>
 <li>git commit -am &lsquo;your commit comment&rsquo;   # perform add and commit</li>
@@ -105,6 +105,14 @@
 </ul>
 
 <h3 id="ignore">Ignore</h3>
+
+<ul>
+<li>git reset HEAD [filename] # put back the file to unstaged.</li>
+<li>Change .gitignore file  # add files you want to ignore</li>
+<li>git rm &ndash;cached [filename] # remove file from the cache, oppsite to git add, prevent files being exposed to git.</li>
+</ul>
+
+<h3 id="merge">Merge</h3>
 
 <h3 id="tips"><em>Tips</em></h3>
 

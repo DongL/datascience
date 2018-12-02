@@ -15,7 +15,7 @@ tags: []
 ## Some basic commands
 
 ### Add-commit-push 
-- git add -u :/ # adds all modified file changes to the stage; analgus to confirm the changes
+- git add -u :/ # adds all modified file changes to the stage; analgus to get files monitored by git. 
 - git add * :/ # adds modified and any new files (that's not gitignore'ed) to the stage
 - git commit -m 'your commit comment'   # equivalent to save the file
 - git commit -am 'your commit comment'   # perform add and commit 
@@ -33,7 +33,11 @@ tags: []
 - git reset --hard [commit id]  # set HEAD to the old commit idenified by id  
 
 ### Ignore
+- git reset HEAD [filename] # put back the file to unstaged.
+- Change .gitignore file  # add files you want to ignore
+- git rm --cached [filename] # remove file from the cache, oppsite to git add, prevent files being exposed to git. 
 
+### Merge
 
 
 ### _Tips_   
