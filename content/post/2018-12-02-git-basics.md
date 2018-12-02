@@ -54,7 +54,7 @@ add -h flag to get help: e.g. git show -h
 `git commit` : saved
 
 ## Merge 
-Merge conflicts, and push back to remote repository.  
+Merge conflicts, and push back the merged fixes to remote repository.  
 
 ![](/post/2018-12-02-git-basics_files/Screen Shot 2018-12-02 at 12.17.35 AM.png)
 
