@@ -1,2 +1,2 @@
-# datascience website.
+# datascience blogs.
 
