@@ -122,8 +122,10 @@ install_theme(&quot;gcushen/hugo-academic&quot;, theme_example = TRUE, update_co
 <div id="push-to-github" class="section level2">
 <h2>Push to Github</h2>
 <p><a href="https://www.youtube.com/watch?v=DQUcmNO4diQ&amp;list=PLeAngWE7pYE5lXCjbmg0C1hM-w0kPIFZA" title="How to use Git"><img src="http://img.youtube.com/vi/DQUcmNO4diQ/0.jpg" alt="How to use Git" /></a></p>
-<pre><code>git commit -a 
-git push</code></pre>
+<pre><code>git add -u :/ # adds all modified file changes to the stage; analgus to confirm the changes
+git add * :/ # adds modified and any new files (that&#39;s not gitignore&#39;ed) to the stage
+git commit -m &#39;your commit comment&#39;   # equivalent to save the file
+git push origin master # or just git push origin master</code></pre>
 </div>
 <div id="set-up-netlify-account" class="section level2">
 <h2>Set up Netlify account</h2>

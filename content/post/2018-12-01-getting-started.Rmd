@@ -64,8 +64,10 @@ install_theme("gcushen/hugo-academic", theme_example = TRUE, update_config = TRU
 [![How to use Git](http://img.youtube.com/vi/DQUcmNO4diQ/0.jpg)](https://www.youtube.com/watch?v=DQUcmNO4diQ&list=PLeAngWE7pYE5lXCjbmg0C1hM-w0kPIFZA "How to use Git")
 
 ```
-git commit -a 
-git push
+git add -u :/ # adds all modified file changes to the stage; analgus to confirm the changes
+git add * :/ # adds modified and any new files (that's not gitignore'ed) to the stage
+git commit -m 'your commit comment'   # equivalent to save the file
+git push origin master # or just git push origin master
 ```
 
 ## Set up Netlify account
