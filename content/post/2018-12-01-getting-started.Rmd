@@ -56,4 +56,8 @@ blogdown::new_post(title, kind = "default", open = interactive(),
 
 ## Push to Github
 
+```
+git commit
+git push
+```
 
