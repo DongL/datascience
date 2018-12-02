@@ -18,7 +18,7 @@
       
       <guid>/2018/12/02/git-basics/</guid>
       <description>Online tutorial for Git 
-Some basic command  git status # check files, check history git add -u :/ # adds all modified file changes to the stage; analgus to confirm the changes git add * :/ # adds modified and any new files (that&amp;rsquo;s not gitignore&amp;rsquo;ed) to the stage git commit -m &amp;lsquo;your commit comment&amp;rsquo; # equivalent to save the file git commit am &amp;lsquo;your commit comment&amp;rsquo; # perform add and commit git push origin master # or just git push origin master git log # show the history, who, when and what git reflog # random hash for each commit git show # show last command gitk # gui for history, id etc of commits sumbitted git checkout [filename] # convert back to original file.</description>
+Some basic command  git status # check files, check history git add -u :/ # adds all modified file changes to the stage; analgus to confirm the changes git add * :/ # adds modified and any new files (that&amp;rsquo;s not gitignore&amp;rsquo;ed) to the stage git commit -m &amp;lsquo;your commit comment&amp;rsquo; # equivalent to save the file git commit -am &amp;lsquo;your commit comment&amp;rsquo; # perform add and commit git push origin master # or just git push origin master git log # show the history, who, when and what git reflog # random hash for each commit git show # show last command gitk # gui for history, id etc of commits sumbitted git checkout [filename] # convert back to original file.</description>
     </item>
     
     <item>
