@@ -12,7 +12,7 @@ tags: []
 [![How to use Git](http://img.youtube.com/vi/DQUcmNO4diQ/0.jpg)](https://www.youtube.com/watch?v=DQUcmNO4diQ&list=PLeAngWE7pYE5lXCjbmg0C1hM-w0kPIFZA "How to use Git")
 
 
-## Some basic command
+## Some basic commands
 
 ### Add-commit-push 
 - git add -u :/ # adds all modified file changes to the stage; analgus to confirm the changes
@@ -22,7 +22,7 @@ tags: []
 - git push origin master # or just git push origin master
 
 ### Check history
-- git status # consistency status with branch master, change not staged for commit, untracked file.
+- git status # consistency status with branch master, changes not staged for commit, untracked file.
 - git log # show the history, who, when and what 
 - git reflog # random hash for each commit
 - git show # show last command
