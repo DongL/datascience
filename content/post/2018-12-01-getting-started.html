@@ -13,7 +13,8 @@ categories: []
 <ul>
 <li><a href="https://www.markdownguide.org/basic-syntax/">Markdown syntax</a></li>
 <li>Github account</li>
-<li><a href="https://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf">Git</a></li>
+<li><a href="https://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf">Git1</a></li>
+<li><a href="https://www.git-tower.com/blog/git-cheat-sheet">Git2</a></li>
 <li><a href="https://bookdown.org/yihui/blogdown/">Blogdown</a></li>
 </ul>
 <div id="set-up-a-new-repository-on-github" class="section level2">
@@ -34,7 +35,7 @@ cd \your\local\dir</code></pre>
 </div>
 <div id="set-up-rstudio" class="section level2">
 <h2>Set up Rstudio</h2>
-<p>Rstudio have a whoel set of mature solution for building a website using a preset wizard addin - Website using blogdown. This will promote you to choose the theme and document format you’d like to use for blogging. <em>You should create a blogdown project exactly in the clone directory you just set.</em></p>
+<p>Rstudio provides a preset wizard addin for building a website project - Website using blogdown. This will promote you to choose the theme and document format you’d like to use for blogging. <em>You should create a blogdown project exactly in the clone directory you just set.</em></p>
 <div class="figure">
 <img src="/post/2018-12-01-getting-started_files/Screen%20Shot%202018-12-01%20at%206.40.19%20PM.png" />
 
@@ -52,10 +53,18 @@ cd \your\local\dir</code></pre>
     author = getOption(&quot;blogdown.author&quot;), categories = NULL, 
     tags = NULL, date = Sys.Date(), file = NULL, slug = NULL, 
     title_case = getOption(&quot;blogdown.title_case&quot;), subdir = getOption(&quot;blogdown.subdir&quot;, 
-        &quot;post&quot;), ext = getOption(&quot;blogdown.ext&quot;, &quot;.md&quot;))</code></pre>
+        &quot;post&quot;), ext = getOption(&quot;blogdown.ext&quot;, &quot;.md&quot;))
+        
+        
+# Install a new theme
+install_theme(&quot;gcushen/hugo-academic&quot;, theme_example = TRUE, update_config = TRUE)</code></pre>
 </div>
 <div id="push-to-github" class="section level2">
 <h2>Push to Github</h2>
-<pre><code>git commit
+<p><a href="https://www.youtube.com/watch?v=DQUcmNO4diQ&amp;list=PLeAngWE7pYE5lXCjbmg0C1hM-w0kPIFZA" title="How to use Git"><img src="http://img.youtube.com/vi/DQUcmNO4diQ/0.jpg" alt="How to use Git" /></a></p>
+<pre><code>git commit -a 
 git push</code></pre>
+</div>
+<div id="set-up-netlify-account" class="section level2">
+<h2>Set up Netlify account</h2>
 </div>

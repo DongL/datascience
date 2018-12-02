@@ -12,7 +12,8 @@ An useful short video introdution/guide is provided [here](https://www.rstudio.c
 
 - [Markdown syntax](https://www.markdownguide.org/basic-syntax/)
 - Github account 
-- [Git](https://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf)
+- [Git1](https://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf)
+- [Git2](https://www.git-tower.com/blog/git-cheat-sheet)
 - [Blogdown](https://bookdown.org/yihui/blogdown/)
 
 ## Set up a new repository on github
@@ -33,7 +34,7 @@ cd \your\local\dir
 After downloding the git clone, you should see an empty folder with a folder name the same as the repository name.  
 
 ## Set up Rstudio 
-Rstudio have a whoel set of mature solution for building a website using a preset wizard addin - Website using blogdown. This will promote you to choose the theme and document format you'd like to use for blogging. _You should create a blogdown project exactly in the clone directory you just set._
+Rstudio provides a preset wizard addin for building a website project - Website using blogdown. This will promote you to choose the theme and document format you'd like to use for blogging. _You should create a blogdown project exactly in the clone directory you just set._
 
 ![](/post/2018-12-01-getting-started_files/Screen Shot 2018-12-01 at 6.40.19 PM.png)
 
@@ -52,12 +53,19 @@ blogdown::new_post(title, kind = "default", open = interactive(),
     tags = NULL, date = Sys.Date(), file = NULL, slug = NULL, 
     title_case = getOption("blogdown.title_case"), subdir = getOption("blogdown.subdir", 
         "post"), ext = getOption("blogdown.ext", ".md"))
+        
+        
+# Install a new theme
+install_theme("gcushen/hugo-academic", theme_example = TRUE, update_config = TRUE)
 ```
 
 ## Push to Github
 
+[![How to use Git](http://img.youtube.com/vi/DQUcmNO4diQ/0.jpg)](https://www.youtube.com/watch?v=DQUcmNO4diQ&list=PLeAngWE7pYE5lXCjbmg0C1hM-w0kPIFZA "How to use Git")
+
 ```
-git commit
+git commit -a 
 git push
 ```
 
+## Set up Netlify account
