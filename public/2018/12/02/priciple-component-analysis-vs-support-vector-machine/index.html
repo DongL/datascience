@@ -6,8 +6,8 @@
 <meta name="generator" content="Hugo 0.37" />
 
 
-<title>Priciple component analysis vs support vector machine - A Hugo website</title>
-<meta property="og:title" content="Priciple component analysis vs support vector machine - A Hugo website">
+<title>Principle component analysis vs support vector machine - A Hugo website</title>
+<meta property="og:title" content="Principle component analysis vs support vector machine - A Hugo website">
 
 
 
@@ -59,20 +59,32 @@
 
   <article class="article">
     
-    <span class="article-duration">1 min read</span>
+    <span class="article-duration">4 min read</span>
     
 
-    <h1 class="article-title">Priciple component analysis vs support vector machine</h1>
+    <h1 class="article-title">Principle component analysis vs support vector machine</h1>
 
     
     <span class="article-date">2018/12/02</span>
     
 
     <div class="article-content">
-      <div id="load-protienomic-data" class="section level3">
-<h3>Load protienomic data</h3>
+      <div id="background" class="section level2">
+<h2>Background</h2>
+<p>This spreadsheet contains urine proteomic data normalized to creatinine (relative fluorescent units of protein per mg of creatinine) with 4 groups: 1) Febrile UTI), 2) nonfebrile UTI, 3) culture negative pyuria (white blood cells in the urine) and 4) culture negative normal UA</p>
+<p>We are looking for a panel of protein/creatinine levels that predicts UTI (group 1 and 2 combined) when compared to both culture negative pyuria (group 3) and culture negative, normal UA (group 4) individually and in combination</p>
+<pre class="r"><code>library(knitr)
+opts_chunk$set(engine.path = &#39;/anaconda3/bin/python&#39;)</code></pre>
+</div>
+<div id="load-proteomics-data" class="section level2">
+<h2>Load proteomics data</h2>
 <pre class="python"><code>import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
+# plt.style.use(&#39;ggplot&#39;)
+import matplotlib
+plt.style.use(&#39;ggplot&#39;)
+# matplotlib.use(&#39;Agg&#39;)
 scan = pd.read_csv(&#39;/Users/DL/Documents/Jupyter project/Somascan Protein Creatinine/somascan.csv&#39;)
 print(scan.head())</code></pre>
 <pre><code>##      SomaID        SeqID                             Subject ID       9041  \
@@ -104,6 +116,92 @@ print(scan.head())</code></pre>
 ## 4  1.634188  2.369333  31.554860  
 ## 
 ## [5 rows x 35 columns]</code></pre>
+</div>
+<div id="exploratory-data-analysis" class="section level2">
+<h2>Exploratory data analysis</h2>
+</div>
+<div id="data-processing" class="section level2">
+<h2>Data processing</h2>
+<p>Covert pandas dataframe to matrix. We build an internal <code>Data2matrix</code> class for <code>Pipeline</code> to use. We will need implement fit and transform functions inside the Data2matrix class.</p>
+<pre class="python"><code>from sklearn.preprocessing import Imputer, StandardScaler, MinMaxScaler
+from sklearn.pipeline import Pipeline
+from sklearn.base import BaseEstimator, TransformerMixin
+from sklearn.model_selection import cross_val_score, cross_val_predict
+# imputer = Imputer(strategy = &#39;mean&#39;)
+class DataFrameSelector(BaseEstimator, TransformerMixin):
+    def __init__(self, attribute_names):
+        self.attribute_names = attribute_names #[attribute_names != &#39;sampleID&#39;]
+    def fit(self, X, y = None):
+        return self
+    def transform(self, X):
+        return X[self.attribute_names].values
+    
+class Data2matrix(BaseEstimator, TransformerMixin):
+    def __init__(self, attribute_names = None):
+        self.attribute_names = attribute_names 
+    def fit(self, X, y = None):
+        return self
+    def transform(self, X):
+        return X.values
+        
+num_pipeline = Pipeline([
+    (&#39;Data2matrix&#39;, Data2matrix()),
+    (&#39;std_scalar&#39;, StandardScaler()) ])</code></pre>
+</div>
+<div id="prepare-feature-x-matrix-and-label-y" class="section level2">
+<h2>Prepare feature X matrix and label y</h2>
+<pre class="python"><code>proteinCreatine = scan.T
+X = proteinCreatine.iloc[3::, :]
+Xz = (X - X.mean(axis = 0))/X.std(axis=0)
+Xz = Xz.values
+# Prepare feature X matrix
+X = num_pipeline.fit_transform(X)
+# Prepare label y</code></pre>
+<pre><code>## /anaconda3/lib/python3.6/site-packages/sklearn/utils/validation.py:475: DataConversionWarning: Data with input dtype object was converted to float64 by StandardScaler.
+##   warnings.warn(msg, DataConversionWarning)</code></pre>
+<pre class="python"><code>g1 = [&#39;febrile&#39;] * 8
+g2 = [&#39;afebriel&#39;] * 8
+g3 = [&#39;negPyuria&#39;] * 8
+g4 = [&#39;negNoPyuria&#39;] * 8
+# y = [*g1, *g2, *g3, *g4]</code></pre>
+<pre class="python"><code>u, s, vh = np.linalg.svd(X)
+pc = X.dot(vh)
+print(pc[:, 0:3])</code></pre>
+<pre><code>## [[-22.12595686  -1.827366    -0.50799225]
+##  [ -5.83845684  25.86311871  -0.04627341]
+##  [ -2.13588484   4.15324246 -17.42461128]
+##  [ -4.73077489   9.53280756 -14.1437465 ]
+##  [  0.68546997  -0.92840285   1.42514288]
+##  [  2.41968846  -4.22031789   4.53093721]
+##  [  0.31380337  -4.10693904   3.36159053]
+##  [  1.7327576   -4.25708994   2.45339693]
+##  [  3.28130968  -4.41062191   4.39867009]
+##  [-14.468287    10.77514783 -16.50616002]
+##  [  0.84808931  -3.1281101    0.5403974 ]
+##  [ -6.59166722  17.38592643  -1.8771489 ]
+##  [  0.15393304  -3.29220087  -0.04472295]
+##  [  2.45433224  -4.95400435   4.23056022]
+##  [ -6.40873331  -5.07715634  -0.87158866]
+##  [  1.57769432  -4.54444439  -1.49276008]
+##  [  1.9197766   -3.38308415   2.07234973]
+##  [  2.78832327  -4.243789     3.77664789]
+##  [  3.10091695  -5.40313592   3.6957763 ]
+##  [  2.37310422  -3.89961742   1.6438292 ]
+##  [  3.40024794  -4.98775209   2.59615238]
+##  [  2.67133197  -3.94821042   2.49341984]
+##  [  9.20738859  -1.64166832   1.70097559]
+##  [  2.38174232  -4.15986754   3.32500822]
+##  [  4.40663862  -2.06070752   1.79408554]
+##  [  3.58432852  13.6172157    1.55763593]
+##  [  1.65251287  -4.65611643   4.04618723]
+##  [  0.49210859  -1.95002204  -9.57709675]
+##  [  1.22004277  -5.36730287   4.40245197]
+##  [  3.17431702  -4.99203932   4.04755744]
+##  [  2.70333097  -4.57760934   3.93055261]
+##  [  3.75657175  14.69011737   0.46877569]]</code></pre>
+<pre class="python"><code>plt.scatter(pc[:, 0], pc[:, 1])
+plt.show()</code></pre>
+<p><img src="/post/2018-12-02-priciple-component-analysis-vs-support-vector-machine_files/figure-html/unnamed-chunk-5-1.png" /><!-- --></p>
 </div>
 
     </div>

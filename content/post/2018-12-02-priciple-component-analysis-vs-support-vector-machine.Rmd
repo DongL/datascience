@@ -2,52 +2,108 @@
 title: "Principle component analysis vs support vector machine"
 author: "Dong Liang"
 date: '2018-12-02'
+output:
+  html_document:
+    df_print: paged
+  pdf_document: 
+    fig_caption: yes
+    keep_tex: yes
+  word_document: default
+editor_options:
+  chunk_output_type: inline
 slug: priciple-component-analysis-vs-support-vector-machine
 tags: Machine learning
 categories: Machine learning
 ---
 
+## Background
+
+This spreadsheet  contains urine proteomic data normalized to creatinine (relative fluorescent units of protein per mg of creatinine) with 4 groups: 1) Febrile UTI), 2) nonfebrile UTI, 3) culture negative pyuria (white blood cells in the urine) and 4) culture negative normal UA
+
+We are looking for a panel of  protein/creatinine levels that predicts UTI (group 1 and 2 combined) when compared to both culture negative pyuria  (group 3) and culture negative, normal UA (group 4) individually and in combination
+
+
+```{r}
+library(knitr)
+opts_chunk$set(engine.path = '/anaconda3/bin/python')
+```
 
 ## Load proteomics data
 
 ```{r, engine='python'}
 import pandas as pd
 import numpy as np
-
+import matplotlib.pyplot as plt
+# plt.style.use('ggplot')
+import matplotlib
+plt.style.use('ggplot')
+# matplotlib.use('Agg')
 scan = pd.read_csv('/Users/DL/Documents/Jupyter project/Somascan Protein Creatinine/somascan.csv')
 print(scan.head())
 ```
 
 ## Exploratory data analysis
 
-
 ## Data processing 
 Covert pandas dataframe to matrix.
-We build an internal `Data2matrix` class for `Pipeline` to use. We will need implement \
-fit and transform functions inside the Data2matrix class.
+We build an internal `Data2matrix` class for `Pipeline` to use. We will need implement fit and transform functions inside the Data2matrix class.
 
 ```{r, engine='python'}
 from sklearn.preprocessing import Imputer, StandardScaler, MinMaxScaler
 from sklearn.pipeline import Pipeline
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.model_selection import cross_val_score, cross_val_predict
-imputer = Imputer(strategy = 'mean')
+# imputer = Imputer(strategy = 'mean')
+
+class DataFrameSelector(BaseEstimator, TransformerMixin):
+    def __init__(self, attribute_names):
+        self.attribute_names = attribute_names #[attribute_names != 'sampleID']
+    def fit(self, X, y = None):
+        return self
+    def transform(self, X):
+        return X[self.attribute_names].values
+    
 
 class Data2matrix(BaseEstimator, TransformerMixin):
- def __init__(self, attribute_names = None):
-  self.attribute_names = attribute_names
- def fit(self, X, y = None):
-  return self
- def transform(self):
-  return X.values.
+    def __init__(self, attribute_names = None):
+        self.attribute_names = attribute_names 
+    def fit(self, X, y = None):
+        return self
+    def transform(self, X):
+        return X.values
+        
 
 num_pipeline = Pipeline([
     ('Data2matrix', Data2matrix()),
     ('std_scalar', StandardScaler()) ])
-    
-print(num_pipeline.fit_transform(X))
+
 ```
 
+## Prepare feature X matrix and label y
+```{r, engine='python'}
+proteinCreatine = scan.T
+X = proteinCreatine.iloc[3::, :]
+Xz = (X - X.mean(axis = 0))/X.std(axis=0)
+Xz = Xz.values
 
+# Prepare feature X matrix
+X = num_pipeline.fit_transform(X)
+
+# Prepare label y
+g1 = ['febrile'] * 8
+g2 = ['afebriel'] * 8
+g3 = ['negPyuria'] * 8
+g4 = ['negNoPyuria'] * 8
+# y = [*g1, *g2, *g3, *g4]
+```
+
+```{r, engine='python'}
+u, s, vh = np.linalg.svd(X)
+pc = X.dot(vh)
+print(pc[:, 0:3])
+
+plt.scatter(pc[:, 0], pc[:, 1])
+plt.show()
+```
 
 

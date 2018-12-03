@@ -6,10 +6,20 @@
     <description>Recent content on A Hugo website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PCA - R version</title>
+      <link>/2018/12/03/pca-r-version/</link>
+      <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/12/03/pca-r-version/</guid>
+      <description>library(tidyverse) library(knitr) opts_chunk$set(engine.path = &#39;/anaconda3/bin/python&#39;)  Load proteomics data The sample dataset is dim(scan) matrix.
+scan = read.csv(&#39;/Users/DL/Documents/Jupyter project/Somascan Protein Creatinine/somascan.csv&#39;) X = (scan[,c(4:35)]) # Scale and center - z score -- column wise xscale = (apply(X, 2, scale)) plot(attr(scale(X), &amp;quot;scaled:center&amp;quot;)) x &amp;lt;- xscale[, 4] y &amp;lt;- xscale[, 5] z &amp;lt;- xscale[, 30]  Distance dist() computes and returns distance matrix for pairwise samples stored in the rows of data matrix.</description>
+    </item>
     
     <item>
       <title>Git basics</title>
@@ -22,12 +32,13 @@ Some basic commands Add-commit-push  git add -u :/ # adds all modified file chan
     </item>
     
     <item>
-      <title>Priciple component analysis vs support vector machine</title>
+      <title>Principle component analysis vs support vector machine</title>
       <link>/2018/12/02/priciple-component-analysis-vs-support-vector-machine/</link>
       <pubDate>Sun, 02 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>/2018/12/02/priciple-component-analysis-vs-support-vector-machine/</guid>
-      <description>Load protienomic data import pandas as pd import numpy as np scan = pd.read_csv(&amp;#39;/Users/DL/Documents/Jupyter project/Somascan Protein Creatinine/somascan.csv&amp;#39;) print(scan.head()) ## SomaID SeqID Subject ID 9041 \ ## 0 SL019100 10336-3_3 E3 ubiquitin-protein ligase CHIP 11.067752 ## 1 SL007136 10337-83_3 CCAAT/enhancer-binding protein beta 12.721172 ## 2 SL001731 10339-48_3 Gamma-enolase 2.263340 ## 3 SL019096 10342-55_3 E3 SUMO-protein ligase PIAS4 3.987295 ## 4 SL005173 10344-334_3 Interleukin-10 receptor subunit alpha 70.692542 ## ## 9074 9149 9154 9166 9231 9235 .</description>
+      <description>Background This spreadsheet contains urine proteomic data normalized to creatinine (relative fluorescent units of protein per mg of creatinine) with 4 groups: 1) Febrile UTI), 2) nonfebrile UTI, 3) culture negative pyuria (white blood cells in the urine) and 4) culture negative normal UA
+We are looking for a panel of protein/creatinine levels that predicts UTI (group 1 and 2 combined) when compared to both culture negative pyuria (group 3) and culture negative, normal UA (group 4) individually and in combination</description>
     </item>
     
     <item>
