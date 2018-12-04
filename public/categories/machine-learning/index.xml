@@ -17,8 +17,7 @@
       <pubDate>Sun, 02 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/priciple-component-analysis-vs-support-vector-machine/</guid>
-      <description>Background This spreadsheet contains urine proteomic data normalized to creatinine (relative fluorescent units of protein per mg of creatinine) with 4 groups: 1) Febrile UTI), 2) nonfebrile UTI, 3) culture negative pyuria (white blood cells in the urine) and 4) culture negative normal UA
-We are looking for a panel of protein/creatinine levels that predicts UTI (group 1 and 2 combined) when compared to both culture negative pyuria (group 3) and culture negative, normal UA (group 4) individually and in combination</description>
+      <description>Background library(knitr) opts_chunk$set(engine.path = &amp;#39;/anaconda3/bin/python&amp;#39;)  Load proteomics data import pandas as pd import numpy as np import matplotlib.pyplot as plt # plt.style.use(&amp;#39;ggplot&amp;#39;) import matplotlib plt.style.use(&amp;#39;ggplot&amp;#39;) # matplotlib.use(&amp;#39;Agg&amp;#39;) scan = pd.read_csv(&amp;#39;/Users/DL/Documents/Jupyter project/Somascan Protein Creatinine/somascan.csv&amp;#39;) print(scan.head()) ## SomaID SeqID Subject ID 9041 \ ## 0 SL019100 10336-3_3 E3 ubiquitin-protein ligase CHIP 11.067752 ## 1 SL007136 10337-83_3 CCAAT/enhancer-binding protein beta 12.721172 ## 2 SL001731 10339-48_3 Gamma-enolase 2.263340 ## 3 SL019096 10342-55_3 E3 SUMO-protein ligase PIAS4 3.</description>
     </item>
     
   </channel>
