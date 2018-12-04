@@ -13,72 +13,42 @@
     
     <item>
       <title>PCA - R version</title>
-      <link>/2018/12/03/pca-r-version/</link>
+      <link>/post/pca-r-version/</link>
       <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/12/03/pca-r-version/</guid>
+      <guid>/post/pca-r-version/</guid>
       <description>library(tidyverse) library(knitr) opts_chunk$set(engine.path = &#39;/anaconda3/bin/python&#39;)  Load proteomics data The sample dataset is dim(scan) matrix.
 scan = read.csv(&#39;/Users/DL/Documents/Jupyter project/Somascan Protein Creatinine/somascan.csv&#39;) X = (scan[,c(4:35)]) # Scale and center - z score -- column wise xscale = (apply(X, 2, scale)) plot(attr(scale(X), &amp;quot;scaled:center&amp;quot;)) x &amp;lt;- xscale[, 4] y &amp;lt;- xscale[, 5] z &amp;lt;- xscale[, 30]  Distance dist() computes and returns distance matrix for pairwise samples stored in the rows of data matrix.</description>
     </item>
     
     <item>
       <title>Git basics</title>
-      <link>/2018/12/02/git-basics/</link>
+      <link>/post/git-basics/</link>
       <pubDate>Sun, 02 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/12/02/git-basics/</guid>
+      <guid>/post/git-basics/</guid>
       <description>Online tutorial for Git 
 Some basic commands Add-commit-push  git add -u :/ # adds all modified file changes to the stage; analgus to get files monitored by git. git add * :/ # adds modified and any new files (that&amp;rsquo;s not gitignore&amp;rsquo;ed) to the stage git commit -m &amp;lsquo;your commit comment&amp;rsquo; # equivalent to save the file git commit -am &amp;lsquo;your commit comment&amp;rsquo; # perform add and commit git push origin master # or just git push origin master  Check history  git status # consistency status with branch master, changes not staged for commit, untracked file.</description>
     </item>
     
     <item>
       <title>Principle component analysis vs support vector machine</title>
-      <link>/2018/12/02/priciple-component-analysis-vs-support-vector-machine/</link>
+      <link>/post/priciple-component-analysis-vs-support-vector-machine/</link>
       <pubDate>Sun, 02 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/12/02/priciple-component-analysis-vs-support-vector-machine/</guid>
+      <guid>/post/priciple-component-analysis-vs-support-vector-machine/</guid>
       <description>Background This spreadsheet contains urine proteomic data normalized to creatinine (relative fluorescent units of protein per mg of creatinine) with 4 groups: 1) Febrile UTI), 2) nonfebrile UTI, 3) culture negative pyuria (white blood cells in the urine) and 4) culture negative normal UA
 We are looking for a panel of protein/creatinine levels that predicts UTI (group 1 and 2 combined) when compared to both culture negative pyuria (group 3) and culture negative, normal UA (group 4) individually and in combination</description>
     </item>
     
     <item>
       <title>A brief introduciton on intialization of a website using the R blogdown package</title>
-      <link>/2018/12/01/getting-started/</link>
+      <link>/post/getting-started/</link>
       <pubDate>Sat, 01 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/12/01/getting-started/</guid>
+      <guid>/post/getting-started/</guid>
       <description>An useful short video introdution/guide is provided here.The website will be hosted by github webiste and administered using Netfily.com server. Some basic background knowledges may involve:
  Markdown syntax Github account Git1 Git2 Blogdown  Set up a new repository on github The Github.com is where you will upload and store all the static documents for your website. Suppose you have already set up a github account. The creation of a new repository is straightforward, nothing other than inputting some basic repository info.</description>
-    </item>
-    
-    <item>
-      <title>A Plain Markdown Post</title>
-      <link>/2016/12/30/a-plain-markdown-post/</link>
-      <pubDate>Fri, 30 Dec 2016 21:49:57 -0700</pubDate>
-      
-      <guid>/2016/12/30/a-plain-markdown-post/</guid>
-      <description>This is a post written in plain Markdown (*.md) instead of R Markdown (*.Rmd). The major differences are:
- You cannot run any R code in a plain Markdown document, whereas in an R Markdown document, you can embed R code chunks (```{r}); A plain Markdown post is rendered through Blackfriday, and an R Markdown document is compiled by rmarkdown and Pandoc.  There are many differences in syntax between Blackfriday&amp;rsquo;s Markdown and Pandoc&amp;rsquo;s Markdown.</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>/2015/07/23/hello-r-markdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>/2015/07/23/hello-r-markdown/</guid>
-      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
-    </item>
-    
-    <item>
-      <title>Lorem Ipsum</title>
-      <link>/2015/01/01/lorem-ipsum/</link>
-      <pubDate>Thu, 01 Jan 2015 13:09:13 -0600</pubDate>
-      
-      <guid>/2015/01/01/lorem-ipsum/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
     </item>
     
   </channel>

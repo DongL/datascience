@@ -15,7 +15,7 @@ An useful short video introdution/guide is provided [here](https://www.rstudio.c
 - [Git1](https://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf)
 - [Git2](https://www.git-tower.com/blog/git-cheat-sheet)
 - [Blogdown](https://bookdown.org/yihui/blogdown/)
-
+  
 ## Set up a new repository on github
 The `Github.com` is where you will upload and store all the static documents for your website. Suppose you have already set up a github account. The creation of a new repository is straightforward, nothing other than inputting some basic repository info. (e.g. your repository name, public, *etc*). 
 
@@ -74,5 +74,10 @@ git push origin master # or just git push origin master
 
 
 ## Change themes
+[Install Hugo Themes](https://gohugo.io/themes/installing-and-using-themes/)
+
+```{r}
+
+```
 
 

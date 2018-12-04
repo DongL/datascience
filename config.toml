@@ -3,11 +3,11 @@ languageCode = "en-us"
 title = "A Hugo website"
 theme = "hugo-lithium"
 googleAnalytics = ""
-disqusShortname = ""
+disqusShortname = "dongliang"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [permalinks]
-    post = "/:year/:month/:day/:slug/"
+    # post = "/:year/:month/:day/:slug/"
 
 [[menu.main]]
     name = "About"
@@ -36,4 +36,3 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     width = 50
     height = 50
     alt = "Logo"
-

@@ -13,10 +13,10 @@
     
     <item>
       <title>Principle component analysis vs support vector machine</title>
-      <link>/2018/12/02/priciple-component-analysis-vs-support-vector-machine/</link>
+      <link>/post/priciple-component-analysis-vs-support-vector-machine/</link>
       <pubDate>Sun, 02 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/12/02/priciple-component-analysis-vs-support-vector-machine/</guid>
+      <guid>/post/priciple-component-analysis-vs-support-vector-machine/</guid>
       <description>Background This spreadsheet contains urine proteomic data normalized to creatinine (relative fluorescent units of protein per mg of creatinine) with 4 groups: 1) Febrile UTI), 2) nonfebrile UTI, 3) culture negative pyuria (white blood cells in the urine) and 4) culture negative normal UA
 We are looking for a panel of protein/creatinine levels that predicts UTI (group 1 and 2 combined) when compared to both culture negative pyuria (group 3) and culture negative, normal UA (group 4) individually and in combination</description>
     </item>

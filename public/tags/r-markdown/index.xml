@@ -13,23 +13,12 @@
     
     <item>
       <title>A brief introduciton on intialization of a website using the R blogdown package</title>
-      <link>/2018/12/01/getting-started/</link>
+      <link>/post/getting-started/</link>
       <pubDate>Sat, 01 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/12/01/getting-started/</guid>
+      <guid>/post/getting-started/</guid>
       <description>An useful short video introdution/guide is provided here.The website will be hosted by github webiste and administered using Netfily.com server. Some basic background knowledges may involve:
  Markdown syntax Github account Git1 Git2 Blogdown  Set up a new repository on github The Github.com is where you will upload and store all the static documents for your website. Suppose you have already set up a github account. The creation of a new repository is straightforward, nothing other than inputting some basic repository info.</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>/2015/07/23/hello-r-markdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>/2015/07/23/hello-r-markdown/</guid>
-      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
     </item>
     
   </channel>

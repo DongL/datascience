@@ -53,11 +53,8 @@ add -h flag to get help: e.g. git show -h
 `git add` : modified \\
 `git commit` : saved
 
-
----
-
 ## Merge 
-If a file is modified from other sources simutaneously, a merge conflict will occur when running `git push`. We will need fisrt `git pull` to get conflicts and push back the merged fixes to remote repository.  
+When the file is modified from other sources. A merge conflict will occur when run `git push`. We will need fisrt `git pull` to get conflicts and push back the merged fixes to remote repository.  
 
 ![](/post/2018-12-02-git-basics_files/Screen Shot 2018-12-02 at 12.17.35 AM.png) 
 
